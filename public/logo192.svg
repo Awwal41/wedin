@@ -1,0 +1,22 @@
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle with gradient -->
+  <circle cx="96" cy="96" r="88" fill="url(#gradient)" stroke="#D8A7B1" stroke-width="8"/>
+  
+  <!-- Love symbol (heart) -->
+  <path d="M96 150C96 150 60 120 60 90C60 75 70 65 85 65C90 65 94 67 96 70C98 67 102 65 107 65C122 65 132 75 132 90C132 120 96 150 96 150Z" fill="#A7C4A0" stroke="#4B3B40" stroke-width="2"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="70" cy="80" r="3" fill="#D8A7B1" opacity="0.6"/>
+  <circle cx="122" cy="80" r="3" fill="#D8A7B1" opacity="0.6"/>
+  <circle cx="96" cy="140" r="2" fill="#A7C4A0" opacity="0.8"/>
+  
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F8F5F2;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#D8A7B1;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#A7C4A0;stop-opacity:0.3" />
+    </linearGradient>
+  </defs>
+</svg>
+

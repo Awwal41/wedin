@@ -1,0 +1,23 @@
+Placeholder Images Directory
+
+Replace these placeholder files with your actual wedding photos:
+
+For the Home page carousel (couple1.jpg, couple2.jpg, couple3.jpg, couple4.jpg):
+- High-resolution photos of the couple
+- Landscape orientation works best
+- Consider photos from different settings (outdoor, indoor, formal, casual)
+
+For the Our Story page:
+- how-we-met.jpg: College/fellowship photos from 8-9 years ago
+- friendship-years.jpg: Photos from NYSC, birthdays, send-forths, conferences (2018-2021)
+- new-chapter.jpg: Photos from when you both moved to the US, Converge conference 2024
+- proposal.jpg: Coffee lobby proposal moment or engagement photos
+- our-love-today.jpg: Recent photos together, chess games, walks, singing together
+
+Recommended image specifications:
+- Format: JPG or PNG
+- Resolution: 1920x1080 or higher
+- File size: Under 2MB per image for web optimization
+- Aspect ratio: 16:9 for carousel images, any ratio for story images
+
+The website will display gradient fallbacks if images are not found.
