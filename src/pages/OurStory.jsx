@@ -177,19 +177,19 @@ const OurStory = () => {
           className="text-center mt-24"
         >
           <div className="bg-gradient-to-r from-dusty-pink/10 to-soft-green/10 rounded-3xl p-12">
-            <h3 className="text-3xl font-script text-text-gray mb-6">
+            <h3 className="text-4xl md:text-5xl font-script text-text-gray mb-8">
               "My Eden. My garden. Perfect, beautiful, lush and tender."
             </h3>
-            <p className="text-lg text-text-gray/90 italic mb-4">
+            <p className="text-xl md:text-2xl text-text-gray/90 italic mb-6">
               - Tobi about Dorcas
             </p>
 
-            <div className="w-16 h-1 bg-gradient-to-r from-dusty-pink to-soft-green mx-auto rounded-full mb-6"></div>
-            <h3 className="text-3xl font-script text-text-gray mb-6">
+            <div className="w-16 h-1 bg-gradient-to-r from-dusty-pink to-soft-green mx-auto rounded-full mb-8"></div>
+            <h3 className="text-4xl md:text-5xl font-script text-text-gray mb-8">
             "It's the intentionality of the Lord concerning both of us, how the Lord led us, 
              two seemingly different people whose paths are unknowingly intertwined."
             </h3>
-            <p className="text-base text-text-gray/90 italic mt-4">
+            <p className="text-xl md:text-2xl text-text-gray/90 italic mt-6">
               - Dorcas about their love story
             </p>
           </div>
