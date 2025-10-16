@@ -6,7 +6,6 @@ const Home = () => {
 
   // Actual couple photos - using only web-compatible formats (JPG, JPEG, PNG)
   const images = [
-    '/images/2022_after_church.JPG',
     '/images/June_2025.jpg',
     '/images/DSC00763.JPEG',
     '/images/church_conference_june_2025.JPG',

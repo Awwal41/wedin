@@ -14,7 +14,7 @@ const OurStory = () => {
       title: "The Friendship Years",
       content: "After school, our paths began to cross more frequently, especially after NYSC. We started growing closer, as the Lord would have it. Our friendship started to blossom, though it felt more like a 'stressship' at times - she'd stress me, I'd retaliate, and somehow that became our rhythm. We attended birthdays, send-forths, and conferences together. When I traveled to the US, I wondered if it was the end of our friendship. But then Dorcas also came to the US, and I was so excited to see her. That's how another phase started.",
       author: "Tobi",
-      image: "/images/2022_after_church.JPG",
+      image: "/images/toaster.png",
       side: "right"
     },
     {
@@ -28,14 +28,14 @@ const OurStory = () => {
       title: "The Proposal",
       content: "During one of our church conferences organized by EGFMUSA, I was tired after the Christmas get-together and wanted to bail out on him, but he wasn't having it. We agreed to have coffee in the lobby. Then he started telling me how much he loves me and how his conviction grew in the past year. I thought he was practicing or wanted counsel, but he said he was serious - that he had sought counsel, prayed, and even waited. I was dumbstruck and dramatic. I told him to stop the joke, but when I realized he was serious, I called it a night. A lot happened in between... but guess who said Yes three months later? Me - the best decision I have made after accepting the Lord Jesus as my Lord and personal savior.",
       author: "Dorcas",
-      image: "/images/brethren_wedding_december_2024.png",
+      image: "/images/June_2025.jpg",
       side: "right"
     },
     {
       title: "Our Love Today",
       content: "What makes our love story special is the intentionality of the Lord concerning both of us - how the Lord led us, two seemingly different people whose paths are unknowingly intertwined. We love playing chess (I've promised Tobi I will beat him at his game!), taking walks together, singing (he plays guitar, I sing along), and dancing even though we're not good at it. Our favorite words are 'It's fine' (Dorcas) and 'It's okay, let's have it' (Tobi). We're looking forward to a lifetime adventure fulfilling God's plan and purpose for our lives.",
       author: "Both",
-      image: "/images/Visit_to_Joslyn_Musuem,_Omaha_Nebraska_April_2025.png",
+      image: "/images/church_conference_june_2025.JPG",
       side: "left"
     }
   ];
@@ -99,11 +99,20 @@ const OurStory = () => {
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                   className="relative overflow-hidden rounded-2xl shadow-lg"
+                  style={{ 
+                    aspectRatio: '4/3',
+                    minHeight: '320px',
+                    maxHeight: '400px'
+                  }}
                 >
                   <img
                     src={section.image}
                     alt={section.title}
-                    className="w-full h-80 object-cover"
+                    className="w-full h-full object-cover"
+                    style={{ 
+                      objectFit: 'cover',
+                      objectPosition: 'center top'
+                    }}
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.nextSibling.style.display = 'flex';
@@ -111,7 +120,7 @@ const OurStory = () => {
                   />
                   {/* Fallback content when image fails to load */}
                   <div 
-                    className="w-full h-80 bg-gradient-to-br from-dusty-pink/30 to-soft-green/30 hidden items-center justify-center"
+                    className="w-full h-full bg-gradient-to-br from-dusty-pink/30 to-soft-green/30 hidden items-center justify-center"
                     style={{ display: 'none' }}
                   >
                     <div className="text-center text-text-gray/70">
