@@ -12,7 +12,7 @@ const Footer = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <p className="text-text-gray font-script text-lg">
+          <p className="text-text-gray font-script text-xl md:text-2xl">
             © 2025 Oluwatobu & Dorcas | Houston, Texas
           </p>
           <div className="mt-4 flex justify-center space-x-4">

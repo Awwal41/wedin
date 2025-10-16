@@ -8,8 +8,6 @@ const Home = () => {
   const images = [
     '/images/June_2025.jpg',
     '/images/DSC00763.JPEG',
-    '/images/church_conference_june_2025.JPG',
-    '/images/Dorcas_s_first_converge_conference_2024.JPG',
     '/images/visit_louisiana_september_2025.jpg',
     '/images/visit_louisiana_september_2025_2.jpg',
     '/images/visit_shreveport_tobi_birthday_september_2025.jpg'
