@@ -1,4 +1,4 @@
-# 💕 Oluwatobu & Dorcas Wedding Website
+# 💕 Oluwatobi & Dorcas Wedding Website
 
 A beautiful, modern wedding website built with React and Tailwind CSS, featuring a romantic dusty pink and soft green color palette. Celebrating their union on December 21, 2025 in Houston, Texas.
 
@@ -112,7 +112,7 @@ This project is created for personal use. Feel free to customize it for your own
 - Color palette inspired by romantic wedding themes
 - Fonts from Google Fonts
 - Icons from React Icons
-- Built with love for Oluwatobu & Dorcas
+- Built with love for Oluwatobi & Dorcas
 
 ---
 

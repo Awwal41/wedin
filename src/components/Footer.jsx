@@ -13,7 +13,7 @@ const Footer = () => {
           className="text-center"
         >
           <p className="text-text-gray font-script text-xl md:text-2xl">
-            © 2025 Oluwatobu & Dorcas | Houston, Texas
+            © 2025 Oluwatobi & Dorcas | Houston, Texas
           </p>
           <div className="mt-4 flex justify-center space-x-4">
             <div className="w-2 h-2 bg-dusty-pink rounded-full"></div>
