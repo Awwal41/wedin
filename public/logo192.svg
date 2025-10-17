@@ -1,22 +1,11 @@
 <svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background circle with gradient -->
-  <circle cx="96" cy="96" r="88" fill="url(#gradient)" stroke="#D8A7B1" stroke-width="8"/>
-  
-  <!-- Love symbol (heart) -->
-  <path d="M96 150C96 150 60 120 60 90C60 75 70 65 85 65C90 65 94 67 96 70C98 67 102 65 107 65C122 65 132 75 132 90C132 120 96 150 96 150Z" fill="#A7C4A0" stroke="#4B3B40" stroke-width="2"/>
-  
-  <!-- Decorative elements -->
-  <circle cx="70" cy="80" r="3" fill="#D8A7B1" opacity="0.6"/>
-  <circle cx="122" cy="80" r="3" fill="#D8A7B1" opacity="0.6"/>
-  <circle cx="96" cy="140" r="2" fill="#A7C4A0" opacity="0.8"/>
-  
-  <!-- Gradient definition -->
   <defs>
-    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#F8F5F2;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#D8A7B1;stop-opacity:0.3" />
-      <stop offset="100%" style="stop-color:#A7C4A0;stop-opacity:0.3" />
+    <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D8A7B1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A7C4A0;stop-opacity:1" />
     </linearGradient>
   </defs>
+  <rect width="192" height="192" rx="24" fill="url(#heartGradient)"/>
+  <path d="M96 168c-6.6 0-12-5.4-12-12 0-1.8.6-3.6 1.2-5.4L96 123l10.8 27.6c.6 1.8 1.2 3.6 1.2 5.4 0 6.6-5.4 12-12 12zM48 96c0-26.4 21.6-48 48-48s48 21.6 48 48c0 13.2-5.4 25.2-13.8 34.2L96 168l-34.2-37.8C53.4 121.2 48 109.2 48 96z" fill="white"/>
+  <path d="M96 36c-33 0-60 27-60 60 0 15 9 28.8 14.4 39.6L96 180l45.6-44.4c5.4-10.8 14.4-24.6 14.4-39.6 0-33-27-60-60-60zm0 108l-38.4-37.2c-7.2-8.4-10.8-19.2-10.8-30.6 0-26.4 21.6-48 48-48s48 21.6 48 48c0 11.4-3.6 22.2-10.8 30.6L96 144z" fill="white" opacity="0.2"/>
 </svg>
-

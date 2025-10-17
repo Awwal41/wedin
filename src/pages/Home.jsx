@@ -36,7 +36,7 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="home-title font-script"
           >
-            Oluwatobu & Dorcas
+            Oluwatobi & Dorcas
           </motion.h1>
           
           <motion.div
