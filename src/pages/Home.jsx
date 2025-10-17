@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SimpleCarousel from '../components/SimpleCarousel';
+import Countdown from '../components/Countdown';
 
 const Home = () => {
 
@@ -57,11 +58,14 @@ const Home = () => {
             Houston, Texas
           </motion.div>
 
+          {/* Countdown Timer */}
+          <Countdown />
+
           {/* Decorative elements */}
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 1.8 }}
+            transition={{ duration: 0.6, delay: 2.2 }}
             className="mt-8 flex justify-center space-x-4"
           >
             <div className="w-2 h-2 bg-white rounded-full"></div>
