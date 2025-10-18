@@ -8,7 +8,12 @@ const PORT = process.env.PORT || 5000;
 const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || '*',
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+}));
 app.use(express.json());
 
 // Google Service Account Configuration
@@ -127,6 +132,7 @@ app.get('/api/image/:fileId', async (req, res) => {
     const { size } = req.query;
     
     console.log(`Serving image ${fileId} with size: ${size}`);
+    console.log(`Request from origin: ${req.get('origin') || 'unknown'}`);
     
     // Get the file from Google Drive
     const file = await drive.files.get({
@@ -136,11 +142,22 @@ app.get('/api/image/:fileId', async (req, res) => {
       responseType: 'stream'
     });
     
-    // Set appropriate headers
+    // Set appropriate headers for production
     res.set({
       'Content-Type': file.headers['content-type'] || 'image/jpeg',
       'Cache-Control': 'public, max-age=3600', // Cache for 1 hour
-      'Access-Control-Allow-Origin': '*'
+      'Access-Control-Allow-Origin': process.env.FRONTEND_URL || '*',
+      'Access-Control-Allow-Credentials': 'true',
+      'Access-Control-Allow-Methods': 'GET, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With'
+    });
+    
+    // Handle errors in the stream
+    file.data.on('error', (streamError) => {
+      console.error('Stream error for image:', fileId, streamError);
+      if (!res.headersSent) {
+        res.status(500).json({ error: 'Failed to stream image' });
+      }
     });
     
     // Pipe the image stream to the response
@@ -148,7 +165,16 @@ app.get('/api/image/:fileId', async (req, res) => {
     
   } catch (error) {
     console.error('Error serving image:', error);
-    res.status(500).json({ error: 'Failed to serve image' });
+    console.error('Error details:', error.message);
+    console.error('File ID:', req.params.fileId);
+    
+    if (!res.headersSent) {
+      res.status(500).json({ 
+        error: 'Failed to serve image',
+        details: error.message,
+        fileId: req.params.fileId
+      });
+    }
   }
 });
 

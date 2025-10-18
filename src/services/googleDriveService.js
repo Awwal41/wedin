@@ -69,24 +69,46 @@ const staticImages = [
 const fetchImagesFromBackendAPI = async (folderId = null) => {
   try {
     console.log('Fetching images from backend API...');
+    console.log('Backend URL:', BACKEND_API_URL);
     
     const url = folderId 
       ? `${BACKEND_API_URL}/api/images?folderId=${folderId}`
       : `${BACKEND_API_URL}/api/images`;
     
-    const response = await fetch(url);
+    console.log('Request URL:', url);
+    
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include'
+    });
+    
+    console.log('Response status:', response.status);
+    console.log('Response headers:', Object.fromEntries(response.headers.entries()));
     
     if (!response.ok) {
-      throw new Error(`Backend API error: ${response.status}`);
+      const errorText = await response.text();
+      console.error('Backend API error response:', errorText);
+      throw new Error(`Backend API error: ${response.status} - ${errorText}`);
     }
     
     const images = await response.json();
     console.log(`Found ${images.length} images from Google Drive via backend`);
     
+    // Log first image URL for debugging
+    if (images.length > 0) {
+      console.log('First image URL:', images[0].fullSizeUrl);
+    }
+    
     return images;
     
   } catch (error) {
     console.error('Error fetching from backend API:', error);
+    console.error('Error name:', error.name);
+    console.error('Error message:', error.message);
+    console.error('Error stack:', error.stack);
     throw error;
   }
 };
@@ -139,5 +161,31 @@ export const getImageById = async (imageId) => {
   } catch (error) {
     console.error('Error fetching image by ID:', error);
     throw error;
+  }
+};
+
+// Test image loading function for debugging
+export const testImageLoading = async (imageUrl) => {
+  try {
+    console.log('Testing image loading for URL:', imageUrl);
+    
+    const response = await fetch(imageUrl, {
+      method: 'HEAD', // Just check if the image exists
+      credentials: 'include'
+    });
+    
+    console.log('Image test response status:', response.status);
+    console.log('Image test response headers:', Object.fromEntries(response.headers.entries()));
+    
+    if (response.ok) {
+      console.log('✅ Image URL is accessible');
+      return true;
+    } else {
+      console.log('❌ Image URL is not accessible');
+      return false;
+    }
+  } catch (error) {
+    console.error('❌ Error testing image URL:', error);
+    return false;
   }
 };
