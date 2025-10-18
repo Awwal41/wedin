@@ -65,12 +65,13 @@ const drive = google.drive({ version: 'v3', auth });
 // API endpoint to fetch images
 app.get('/api/images', async (req, res) => {
   try {
+    const folderId = req.query.folderId || GOOGLE_DRIVE_FOLDER_ID;
     console.log('Fetching images from Google Drive...');
-    console.log('Folder ID:', GOOGLE_DRIVE_FOLDER_ID);
+    console.log('Folder ID:', folderId);
     
     // Get files from the folder
     const response = await drive.files.list({
-      q: `'${GOOGLE_DRIVE_FOLDER_ID}' in parents`,
+      q: `'${folderId}' in parents`,
       fields: 'files(id,name,mimeType,createdTime,webContentLink,thumbnailLink)',
       orderBy: 'createdTime desc'
     });
@@ -91,12 +92,11 @@ app.get('/api/images', async (req, res) => {
       return res.json([]);
     }
 
-    // Transform the data with high-quality image URLs
+    // Transform the data with proxy URLs through our server
     const images = imageFiles.map(file => {
-      // Create high-quality thumbnail URL (larger size for better quality)
-      const thumbnailUrl = `https://drive.google.com/thumbnail?id=${file.id}&sz=w1200-h800`;
-      // Create full-size image URL
-      const fullSizeUrl = `https://drive.google.com/uc?export=view&id=${file.id}`;
+      // Use our server as a proxy to serve images and avoid CORS issues
+      const thumbnailUrl = `http://localhost:5000/api/image/${file.id}?size=thumbnail`;
+      const fullSizeUrl = `http://localhost:5000/api/image/${file.id}?size=full`;
       
       return {
         id: file.id,
@@ -116,6 +116,38 @@ app.get('/api/images', async (req, res) => {
       error: 'Failed to fetch images from Google Drive',
       details: error.message 
     });
+  }
+});
+
+// API endpoint to serve individual images (proxy to avoid CORS)
+app.get('/api/image/:fileId', async (req, res) => {
+  try {
+    const { fileId } = req.params;
+    const { size } = req.query;
+    
+    console.log(`Serving image ${fileId} with size: ${size}`);
+    
+    // Get the file from Google Drive
+    const file = await drive.files.get({
+      fileId: fileId,
+      alt: 'media'
+    }, {
+      responseType: 'stream'
+    });
+    
+    // Set appropriate headers
+    res.set({
+      'Content-Type': file.headers['content-type'] || 'image/jpeg',
+      'Cache-Control': 'public, max-age=3600', // Cache for 1 hour
+      'Access-Control-Allow-Origin': '*'
+    });
+    
+    // Pipe the image stream to the response
+    file.data.pipe(res);
+    
+  } catch (error) {
+    console.error('Error serving image:', error);
+    res.status(500).json({ error: 'Failed to serve image' });
   }
 });
 

@@ -66,11 +66,15 @@ const staticImages = [
 ];
 
 // Method 1: Backend API (uses service account credentials)
-const fetchImagesFromBackendAPI = async () => {
+const fetchImagesFromBackendAPI = async (folderId = null) => {
   try {
     console.log('Fetching images from backend API...');
     
-    const response = await fetch(`${BACKEND_API_URL}/api/images`);
+    const url = folderId 
+      ? `${BACKEND_API_URL}/api/images?folderId=${folderId}`
+      : `${BACKEND_API_URL}/api/images`;
+    
+    const response = await fetch(url);
     
     if (!response.ok) {
       throw new Error(`Backend API error: ${response.status}`);
@@ -99,12 +103,12 @@ const fetchImagesFromGoogleDriveAPI = async () => {
 };
 
 // Main function to fetch images (tries backend API first, falls back to static)
-export const fetchImagesFromDrive = async () => {
+export const fetchImagesFromDrive = async (folderId = null) => {
   try {
     // Try backend API first (uses service account)
     if (USE_BACKEND_API) {
       console.log('Using backend API with service account...');
-      return await fetchImagesFromBackendAPI();
+      return await fetchImagesFromBackendAPI(folderId);
     }
     
     // Fall back to static images
