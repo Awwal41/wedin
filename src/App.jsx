@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import OurStory from './pages/OurStory';
 import Registry from './pages/Registry';
+import Gallery from './pages/Gallery';
 import Footer from './components/Footer';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/our-story" element={<OurStory />} />
           <Route path="/registry" element={<Registry />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Routes>
         <Footer />
       </div>
