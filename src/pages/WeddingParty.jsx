@@ -123,10 +123,10 @@ const WeddingParty = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-center mb-16"
         >
-          <div className="flex justify-center space-x-4">
+          <div className="w-full flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <button
               onClick={() => setActiveSection('bridal-train')}
-              className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl ${
+              className={`w-full sm:w-48 px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl ${
                 activeSection === 'bridal-train'
                   ? 'bg-dusty-pink text-white transform scale-105'
                   : 'bg-white/80 text-text-gray hover:bg-dusty-pink/10 hover:text-dusty-pink hover:scale-105'
@@ -136,7 +136,7 @@ const WeddingParty = () => {
             </button>
             <button
               onClick={() => setActiveSection('groomsmen')}
-              className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl ${
+              className={`w-full sm:w-48 px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl ${
                 activeSection === 'groomsmen'
                   ? 'bg-dusty-pink text-white transform scale-105'
                   : 'bg-white/80 text-text-gray hover:bg-dusty-pink/10 hover:text-dusty-pink hover:scale-105'
