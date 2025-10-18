@@ -5,6 +5,7 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
 
 // Middleware
 app.use(cors());
@@ -95,8 +96,8 @@ app.get('/api/images', async (req, res) => {
     // Transform the data with proxy URLs through our server
     const images = imageFiles.map(file => {
       // Use our server as a proxy to serve images and avoid CORS issues
-      const thumbnailUrl = `http://localhost:5000/api/image/${file.id}?size=thumbnail`;
-      const fullSizeUrl = `http://localhost:5000/api/image/${file.id}?size=full`;
+      const thumbnailUrl = `${BASE_URL}/api/image/${file.id}?size=thumbnail`;
+      const fullSizeUrl = `${BASE_URL}/api/image/${file.id}?size=full`;
       
       return {
         id: file.id,
@@ -166,5 +167,5 @@ app.get('*', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  console.log(`Google Drive API endpoint: http://localhost:${PORT}/api/images`);
+  console.log(`Google Drive API endpoint: ${BASE_URL}/api/images`);
 });
