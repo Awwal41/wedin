@@ -90,7 +90,7 @@
         .order-label {
             color: #d4af37;
             font-family: 'Dancing Script', 'Brush Script MT', cursive;
-            font-size: 28px;
+            font-size: 34px;
             font-weight: 400;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
         }
@@ -216,7 +216,7 @@
         }
 
         .reception-left {
-            width: 30%;
+            width: 27.5%;
             padding: 60px 45px;
             position: relative;
             z-index: 1;
@@ -225,7 +225,7 @@
         }
 
         .reception-middle {
-            width: 40%;
+            width: 45%;
             padding: 60px 35px;
             display: flex;
             align-items: center;
@@ -235,7 +235,7 @@
         }
 
         .reception-right {
-            width: 30%;
+            width: 27.5%;
             padding: 60px 45px;
             display: flex;
             flex-direction: column;
@@ -247,54 +247,13 @@
 
         .couple-portrait {
             width: 100%;
-            max-width: 450px;
+            max-width: 700px;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.25);
             object-fit: cover;
         }
 
-        .qr-code {
-            width: 200px;
-            height: 200px;
-            background: #000;
-            margin-bottom: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 3px solid #000;
-            position: relative;
-        }
-
-        .qr-code::before {
-            content: '';
-            width: 90%;
-            height: 90%;
-            background: 
-                repeating-linear-gradient(0deg, #fff 0px, #fff 8px, #000 8px, #000 16px),
-                repeating-linear-gradient(90deg, #fff 0px, #fff 8px, #000 8px, #000 16px);
-            background-size: 20px 20px;
-            opacity: 0.3;
-        }
-
-        .qr-code::after {
-            content: 'QR';
-            position: absolute;
-            color: #fff;
-            font-size: 28px;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-        }
-
-        .scan-text {
-            text-transform: uppercase;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-align: center;
-            font-family: 'Playfair Display', 'Georgia', serif;
-            color: #444;
-        }
 
         .announcements-title {
             font-weight: 600;
@@ -359,7 +318,7 @@
             }
 
             .order-label {
-                font-size: 22px;
+                font-size: 28px;
             }
 
             .ceremony-right {
@@ -431,10 +390,6 @@
                 align-items: center;
             }
 
-            .qr-code {
-                width: 180px;
-                height: 180px;
-            }
 
             .reception-order-title {
                 font-size: 24px;
@@ -471,7 +426,7 @@
             }
 
             .order-label {
-                font-size: 20px;
+                font-size: 26px;
             }
 
             .ceremony-right {
@@ -488,10 +443,6 @@
                 padding: 25px 20px;
             }
 
-            .qr-code {
-                width: 150px;
-                height: 150px;
-            }
         }
 
         @media print {
@@ -681,8 +632,6 @@
         </div>
         
         <div class="reception-right">
-            <div class="qr-code"></div>
-            <div class="scan-text">SCAN FOR MORE DETAILS</div>
         </div>
     </div>
 </body>
