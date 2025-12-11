@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dorcas & Oluwatobi - Wedding Program</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #fff;
+            color: #2c2c2c;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .page {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            page-break-after: always;
+        }
+
+        /* CEREMONY PAGE */
+        .ceremony-page {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .ceremony-left {
+            width: 40%;
+            position: relative;
+            background: #4a4a4a;
+            background-image: url('images/image1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 40px 30px;
+            overflow: hidden;
+        }
+
+        .ceremony-left::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .ceremony-left > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .ceremony-title {
+            color: #fff;
+            font-family: 'Dancing Script', 'Brush Script MT', cursive;
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+            line-height: 1.2;
+        }
+
+        .couple-names {
+            color: #fff;
+            font-family: 'Dancing Script', 'Brush Script MT', cursive;
+            font-size: 56px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+            line-height: 1.1;
+        }
+
+        .order-label {
+            color: #d4af37;
+            font-family: 'Dancing Script', 'Brush Script MT', cursive;
+            font-size: 28px;
+            font-weight: 400;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+
+        .ceremony-right {
+            width: 60%;
+            background: #fff;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 182, 193, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(144, 238, 144, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 192, 203, 0.1) 0%, transparent 60%);
+            padding: 50px 60px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .order-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: 'Playfair Display', 'Georgia', serif;
+            color: #1a1a1a;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 15px;
+        }
+
+        .order-list {
+            list-style: decimal;
+            list-style-position: outside;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .order-list li {
+            margin-bottom: 12px;
+            font-size: 17px;
+            line-height: 1.9;
+            padding-left: 12px;
+            color: #333;
+            font-weight: 400;
+        }
+
+        .content-columns {
+            display: flex;
+            gap: 50px;
+            margin-top: 25px;
+            align-items: flex-start;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        .song-section {
+            margin-bottom: 25px;
+        }
+        
+        .song-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .song-title {
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 18px;
+            margin-top: 8px;
+            font-family: 'Playfair Display', 'Georgia', serif;
+            color: #1a1a1a;
+            letter-spacing: 0.5px;
+            border-left: 4px solid rgba(212, 175, 55, 0.5);
+            padding-left: 15px;
+        }
+
+        .verse-title, .chorus-title, .bridge-title {
+            font-weight: 600;
+            font-size: 15px;
+            margin-top: 22px;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', 'Georgia', serif;
+            color: #444;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+
+        .song-lyrics {
+            font-size: 15px;
+            line-height: 2;
+            margin-bottom: 18px;
+            font-family: 'Georgia', serif;
+            color: #2c2c2c;
+            text-align: left;
+        }
+
+        /* RECEPTION PAGE */
+        .reception-page {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            background: #fff;
+            background-image: 
+                radial-gradient(circle at 15% 25%, rgba(255, 182, 193, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 85% 75%, rgba(144, 238, 144, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(255, 192, 203, 0.12) 0%, transparent 55%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reception-page::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle at 30% 70%, rgba(255,182,193,0.25) 0%, rgba(173,216,230,0.2) 40%, rgba(144,238,144,0.15) 70%, transparent 100%);
+            border-radius: 50% 0 0 0;
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        .reception-left {
+            width: 30%;
+            padding: 60px 45px;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .reception-middle {
+            width: 40%;
+            padding: 60px 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reception-right {
+            width: 30%;
+            padding: 60px 45px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .couple-portrait {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            object-fit: cover;
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            background: #000;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid #000;
+            position: relative;
+        }
+
+        .qr-code::before {
+            content: '';
+            width: 90%;
+            height: 90%;
+            background: 
+                repeating-linear-gradient(0deg, #fff 0px, #fff 8px, #000 8px, #000 16px),
+                repeating-linear-gradient(90deg, #fff 0px, #fff 8px, #000 8px, #000 16px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+        }
+
+        .qr-code::after {
+            content: 'QR';
+            position: absolute;
+            color: #fff;
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .scan-text {
+            text-transform: uppercase;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-align: center;
+            font-family: 'Playfair Display', 'Georgia', serif;
+            color: #444;
+        }
+
+        .announcements-title {
+            font-weight: 600;
+            font-size: 17px;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            font-family: 'Playfair Display', 'Georgia', serif;
+            color: #1a1a1a;
+        }
+
+        .reception-order-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-top: 35px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: 'Playfair Display', 'Georgia', serif;
+            color: #1a1a1a;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 15px;
+        }
+
+        .reception-list {
+            list-style: decimal;
+            list-style-position: outside;
+            padding-left: 30px;
+        }
+
+        .reception-list li {
+            margin-bottom: 12px;
+            font-size: 16px;
+            line-height: 1.9;
+            padding-left: 12px;
+            color: #333;
+            font-weight: 400;
+        }
+
+        /* MOBILE RESPONSIVE STYLES */
+        @media screen and (max-width: 768px) {
+            .ceremony-page {
+                flex-direction: column;
+            }
+
+            .ceremony-left {
+                width: 100%;
+                min-height: 400px;
+                padding: 30px 20px;
+                background-size: contain;
+                background-position: center center;
+                background-color: #000000;
+            }
+
+            .ceremony-title {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+
+            .couple-names {
+                font-size: 42px;
+                margin-bottom: 10px;
+            }
+
+            .order-label {
+                font-size: 22px;
+            }
+
+            .ceremony-right {
+                width: 100%;
+                padding: 30px 25px;
+            }
+
+            .order-title {
+                font-size: 24px;
+                margin-bottom: 25px;
+                letter-spacing: 2px;
+            }
+
+            .order-list {
+                margin-bottom: 30px;
+                padding-left: 25px;
+            }
+
+            .order-list li {
+                font-size: 16px;
+                margin-bottom: 10px;
+                line-height: 1.8;
+            }
+
+            .content-columns {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .song-title {
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+
+            .verse-title, .chorus-title, .bridge-title {
+                font-size: 12px;
+                margin-top: 18px;
+            }
+
+            .song-lyrics {
+                font-size: 14px;
+                line-height: 1.9;
+            }
+
+            .reception-page {
+                flex-direction: column;
+            }
+
+            .reception-left {
+                width: 100%;
+                padding: 30px 25px;
+            }
+
+            .reception-middle {
+                width: 100%;
+                padding: 30px 25px;
+            }
+
+            .couple-portrait {
+                max-width: 100%;
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+            }
+
+            .reception-right {
+                width: 100%;
+                padding: 30px 25px;
+                align-items: center;
+            }
+
+            .qr-code {
+                width: 180px;
+                height: 180px;
+            }
+
+            .reception-order-title {
+                font-size: 24px;
+                margin-top: 25px;
+                margin-bottom: 20px;
+                letter-spacing: 2px;
+            }
+
+            .reception-list {
+                padding-left: 25px;
+            }
+
+            .reception-list li {
+                font-size: 15px;
+                line-height: 1.8;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .ceremony-left {
+                min-height: 350px;
+                padding: 25px 15px;
+                background-size: contain;
+                background-position: center center;
+                background-color: #000000;
+            }
+
+            .ceremony-title {
+                font-size: 24px;
+            }
+
+            .couple-names {
+                font-size: 36px;
+            }
+
+            .order-label {
+                font-size: 20px;
+            }
+
+            .ceremony-right {
+                padding: 25px 20px;
+            }
+
+            .order-title {
+                font-size: 20px;
+            }
+
+            .reception-left,
+            .reception-middle,
+            .reception-right {
+                padding: 25px 20px;
+            }
+
+            .qr-code {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        @media print {
+            .page {
+                page-break-after: always;
+            }
+            .ceremony-page, .reception-page {
+                min-height: 100vh;
+            }
+        }
+
+        @media screen {
+            .ceremony-page, .reception-page {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- CEREMONY PAGE -->
+    <div class="page ceremony-page">
+        <div class="ceremony-left">
+            <div class="ceremony-title">Our wedding Ceremony</div>
+            <div>
+                <div class="couple-names">Dorcas & Oluwatobi</div>
+                <div class="order-label">Order of Service</div>
+            </div>
+        </div>
+        <div class="ceremony-right">
+            <div class="order-title">ORDER OF SERVICE</div>
+            <ol class="order-list">
+                <li>Opening Prayer</li>
+                <li>Processional Song</li>
+                <li>Bible Reading</li>
+                <li>Exchange of Marital Vows</li>
+                <li>Exchange of Rings</li>
+                <li>Presentation of the Couple</li>
+                <li>Sermon</li>
+                <li>Blessing the Couple</li>
+                <li>Recessional Song</li>
+                <li>Announcements</li>
+            </ol>
+            
+            <div class="content-columns">
+                <div class="column">
+                    <div class="song-section">
+                        <div class="song-title">Processional Song: Jesus, Your love</div>
+                        <div class="verse-title">[Verse 1]</div>
+                        <div class="song-lyrics">
+                            There is a love that calls me by the name<br>
+                            Sure as the sun, the moon, the stars remain<br>
+                            Your love for me will never change<br>
+                            Jesus, Your love<br>
+                            Jesus, Your love
+                        </div>
+                        
+                        <div class="verse-title">[Verse 2]</div>
+                        <div class="song-lyrics">
+                            There is a love that takes me by the hand<br>
+                            Guiding my heart to find its home again<br>
+                            And where You are is home to me<br>
+                            Jesus, Your love<br>
+                            Jesus, Your love
+                        </div>
+                        
+                        <div class="chorus-title">[Chorus]</div>
+                        <div class="song-lyrics">
+                            So let my heart tell You again<br>
+                            When seasons change and stories end<br>
+                            Your steady love<br>
+                            It will sustain me through it all<br>
+                            Jesus, Your love
+                        </div>
+                        
+                        <div class="verse-title">[Verse 3]</div>
+                        <div class="song-lyrics">
+                            There is a peace that stays though storms may come<br>
+                            I hear Your voice within the winds that blow<br>
+                            I hear Your song, it calls to me<br>
+                            Jesus, Your love<br>
+                            Jesus, Your love
+                        </div>
+                        
+                        <div class="chorus-title">[Chorus]</div>
+                        <div class="song-lyrics">
+                            So let my heart tell You again<br>
+                            When seasons change and stories end<br>
+                            Your steady love<br>
+                            It will sustain me through it all<br>
+                            Jesus, Your love
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="song-section">
+                        <div class="bridge-title">[Bridge]</div>
+                        <div class="song-lyrics">
+                            There is a strength that rises up in me<br>
+                            To know that You've been here before me<br>
+                            A strength beyond what I can see<br>
+                            Jesus, Your love<br>
+                            Jesus, Your love
+                        </div>
+                    </div>
+                    
+                    <div class="song-section">
+                        <div class="song-title">Recessional Song: In Christ Alone</div>
+                        <div class="verse-title">[Verse 1]</div>
+                        <div class="song-lyrics">
+                            In Christ alone, my hope is found<br>
+                            He is my light, my strength, my song<br>
+                            This Cornerstone, this solid ground<br>
+                            Firm through the fiercest drought and storm<br>
+                            What heights of love, what depths of peace<br>
+                            When fears are stilled, when strivings cease<br>
+                            My Comforter, my All in All<br>
+                            Here in the love of Christ I stand
+                        </div>
+                        
+                        <div class="verse-title">[Verse 2]</div>
+                        <div class="song-lyrics">
+                            In Christ alone, who took on flesh<br>
+                            Fullness of God in helpless babe<br>
+                            This gift of love and righteousness<br>
+                            Scorned by the ones He came to save<br>
+                            'Til on that cross as Jesus died<br>
+                            The wrath of God was satisfied<br>
+                            For every sin on Him was laid<br>
+                            Here in the death of Christ I live
+                        </div>
+                        
+                        <div class="verse-title">[Verse 3]</div>
+                        <div class="song-lyrics">
+                            There in the ground His body lay<br>
+                            Light of the world by darkness slain<br>
+                            Then bursting forth in glorious Day<br>
+                            Up from the grave He rose again<br>
+                            And as He stands in victory<br>
+                            Sin's curse has lost its grip on me<br>
+                            For I am His and He is mine<br>
+                            Bought with the precious blood of Christ
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RECEPTION PAGE -->
+    <div class="page reception-page">
+        <div class="reception-left">
+            <div class="song-section">
+                <div class="verse-title">[Verse 4]</div>
+                <div class="song-lyrics">
+                    No guilt in life, no fear in death<br>
+                    This is the power of Christ in me<br>
+                    From life's first cry to final breath<br>
+                    Jesus commands my destiny<br>
+                    No power of hell, no scheme of man<br>
+                    Can ever pluck me from His hand<br>
+                    Till He returns or calls me home<br>
+                    Here in the power of Christ I'll stand
+                </div>
+            </div>
+            
+            
+            <div class="reception-order-title">ORDER OF RECEPTION</div>
+            <ol class="reception-list">
+                <li>Welcoming of the guests and acknowledging of dignitaries</li>
+                <li>Bridal Party entrance</li>
+                <li>Entrance of the bride and groom</li>
+                <li>Opening prayer</li>
+                <li>Chairman's speech</li>
+                <li>Cutting of the cake</li>
+                <li>Toast</li>
+                <li>Couples first dance</li>
+                <li>Games</li>
+                <li>Throwing of Bouquet</li>
+                <li>Vote of thanks by the couple</li>
+                <li>Dance, dance, dance</li>
+            </ol>
+        </div>
+        
+        <div class="reception-middle">
+            <img src="images/image2.jpg" alt="Dorcas & Oluwatobi" class="couple-portrait">
+        </div>
+        
+        <div class="reception-right">
+            <div class="qr-code"></div>
+            <div class="scan-text">SCAN FOR MORE DETAILS</div>
+        </div>
+    </div>
+</body>
+</html>
