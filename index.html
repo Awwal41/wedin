@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dorcas & Oluwatobi - Wedding Program</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap');
-        
+
         * {
             margin: 0;
             padding: 0;
@@ -62,7 +63,7 @@
             z-index: 1;
         }
 
-        .ceremony-left > * {
+        .ceremony-left>* {
             position: relative;
             z-index: 2;
         }
@@ -73,7 +74,7 @@
             font-size: 36px;
             font-weight: 400;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
             line-height: 1.2;
         }
 
@@ -83,7 +84,7 @@
             font-size: 56px;
             font-weight: 600;
             margin-bottom: 15px;
-            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
             line-height: 1.1;
         }
 
@@ -92,13 +93,13 @@
             font-family: 'Dancing Script', 'Brush Script MT', cursive;
             font-size: 34px;
             font-weight: 400;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
         }
 
         .ceremony-right {
             width: 60%;
             background: #fff;
-            background-image: 
+            background-image:
                 radial-gradient(circle at 20% 30%, rgba(255, 182, 193, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 80% 70%, rgba(144, 238, 144, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 50% 50%, rgba(255, 192, 203, 0.1) 0%, transparent 60%);
@@ -150,7 +151,7 @@
         .song-section {
             margin-bottom: 25px;
         }
-        
+
         .song-section:last-child {
             margin-bottom: 0;
         }
@@ -167,7 +168,9 @@
             padding-left: 15px;
         }
 
-        .verse-title, .chorus-title, .bridge-title {
+        .verse-title,
+        .chorus-title,
+        .bridge-title {
             font-weight: 600;
             font-size: 15px;
             margin-top: 22px;
@@ -188,13 +191,78 @@
             text-align: left;
         }
 
+        /* =========================
+   RECEPTION SEATING LAYOUT
+   ========================= */
+
+        .seating-wrapper {
+            width: 100%;
+            max-width: 360px;
+            margin: auto;
+            padding: 30px 20px;
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            border-radius: 16px;
+            background: #fffdf8;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* ALTAR */
+        .altar {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            background: rgba(212, 175, 55, 0.12);
+        }
+
+        /* ROUND TABLES */
+        .round-tables {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            padding: 0 25px;
+        }
+
+        .round-table {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            border: 2px solid #aaa;
+            background: rgba(200, 200, 200, 0.2);
+        }
+
+        /* RECTANGULAR TABLE GRID */
+        .table-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px 45px;
+            margin-bottom: 30px;
+        }
+
+        .table {
+            height: 70px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            font-size: 22px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+        }
+
         /* RECEPTION PAGE */
         .reception-page {
             display: flex;
             width: 100%;
             min-height: 100vh;
             background: #fff;
-            background-image: 
+            background-image:
                 radial-gradient(circle at 15% 25%, rgba(255, 182, 193, 0.18) 0%, transparent 45%),
                 radial-gradient(circle at 85% 75%, rgba(144, 238, 144, 0.18) 0%, transparent 45%),
                 radial-gradient(circle at 50% 50%, rgba(255, 192, 203, 0.12) 0%, transparent 55%);
@@ -209,7 +277,7 @@
             right: 0;
             width: 250px;
             height: 250px;
-            background: radial-gradient(circle at 30% 70%, rgba(255,182,193,0.25) 0%, rgba(173,216,230,0.2) 40%, rgba(144,238,144,0.15) 70%, transparent 100%);
+            background: radial-gradient(circle at 30% 70%, rgba(255, 182, 193, 0.25) 0%, rgba(173, 216, 230, 0.2) 40%, rgba(144, 238, 144, 0.15) 70%, transparent 100%);
             border-radius: 50% 0 0 0;
             z-index: 0;
             opacity: 0.6;
@@ -250,7 +318,7 @@
             max-width: 700px;
             height: auto;
             border-radius: 10px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
             object-fit: cover;
         }
 
@@ -353,7 +421,9 @@
                 margin-bottom: 15px;
             }
 
-            .verse-title, .chorus-title, .bridge-title {
+            .verse-title,
+            .chorus-title,
+            .bridge-title {
                 font-size: 12px;
                 margin-top: 18px;
             }
@@ -407,6 +477,11 @@
                 line-height: 1.8;
             }
         }
+        .reception-seating-full {
+    margin: 40px 0;
+}
+
+
 
         @media screen and (max-width: 480px) {
             .ceremony-left {
@@ -449,18 +524,23 @@
             .page {
                 page-break-after: always;
             }
-            .ceremony-page, .reception-page {
+
+            .ceremony-page,
+            .reception-page {
                 min-height: 100vh;
             }
         }
 
         @media screen {
-            .ceremony-page, .reception-page {
+
+            .ceremony-page,
+            .reception-page {
                 margin-bottom: 0;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- CEREMONY PAGE -->
     <div class="page ceremony-page">
@@ -485,7 +565,7 @@
                 <li>Recessional Song</li>
                 <li>Announcements</li>
             </ol>
-            
+
             <div class="content-columns">
                 <div class="column">
                     <div class="song-section">
@@ -498,7 +578,7 @@
                             Jesus, Your love<br>
                             Jesus, Your love
                         </div>
-                        
+
                         <div class="verse-title">[Verse 2]</div>
                         <div class="song-lyrics">
                             There is a love that takes me by the hand<br>
@@ -507,7 +587,7 @@
                             Jesus, Your love<br>
                             Jesus, Your love
                         </div>
-                        
+
                         <div class="chorus-title">[Chorus]</div>
                         <div class="song-lyrics">
                             So let my heart tell You again<br>
@@ -516,7 +596,7 @@
                             It will sustain me through it all<br>
                             Jesus, Your love
                         </div>
-                        
+
                         <div class="verse-title">[Verse 3]</div>
                         <div class="song-lyrics">
                             There is a peace that stays though storms may come<br>
@@ -525,7 +605,7 @@
                             Jesus, Your love<br>
                             Jesus, Your love
                         </div>
-                        
+
                         <div class="chorus-title">[Chorus]</div>
                         <div class="song-lyrics">
                             So let my heart tell You again<br>
@@ -536,7 +616,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="column">
                     <div class="song-section">
                         <div class="bridge-title">[Bridge]</div>
@@ -548,7 +628,7 @@
                             Jesus, Your love
                         </div>
                     </div>
-                    
+
                     <div class="song-section">
                         <div class="song-title">Recessional Song: In Christ Alone</div>
                         <div class="verse-title">[Verse 1]</div>
@@ -562,7 +642,7 @@
                             My Comforter, my All in All<br>
                             Here in the love of Christ I stand
                         </div>
-                        
+
                         <div class="verse-title">[Verse 2]</div>
                         <div class="song-lyrics">
                             In Christ alone, who took on flesh<br>
@@ -574,7 +654,7 @@
                             For every sin on Him was laid<br>
                             Here in the death of Christ I live
                         </div>
-                        
+
                         <div class="verse-title">[Verse 3]</div>
                         <div class="song-lyrics">
                             There in the ground His body lay<br>
@@ -608,8 +688,7 @@
                     Here in the power of Christ I'll stand
                 </div>
             </div>
-            
-            
+
             <div class="reception-order-title">ORDER OF RECEPTION</div>
             <ol class="reception-list">
                 <li>Welcoming of the guests and acknowledging of dignitaries</li>
@@ -626,13 +705,121 @@
                 <li>Dance, dance, dance</li>
             </ol>
         </div>
-        
+
         <div class="reception-middle">
             <img src="images/image2.jpg" alt="Dorcas & Oluwatobi" class="couple-portrait">
         </div>
-        
+
         <div class="reception-right">
+            <!-- SEATING ARRANGEMENT MOVED HERE TO BE SIDE-BY-SIDE WITH THE PHOTO -->
+            <div class="reception-seating-full">
+                <h3 class="seating-title">SEATING ARRANGEMENT</h3>
+
+                <div class="seating-section">
+                    <!-- VISUAL LAYOUT - Now with proper horizontal rows (2 round tables side-by-side, 6 rectangular in 3 rows of 2) -->
+                    <div class="seating-visual">
+                        <div class="seating-wrapper">
+                            <div class="altar">ALTAR / STAGE</div>
+
+                            <!-- Head Table + VIP Table side-by-side near the stage -->
+                            <div class="round-tables">
+                                <div class="round-table"><span>Head<br>Table</span></div>
+                                <div class="round-table"><span>Head<br>Table 2</span></div>
+                            </div>
+
+                            <!-- Guest tables 1-6 in 3 rows of 2 (horizontal layout, not stacked vertically) -->
+                            <div class="table-grid">
+                                <div class="table">1</div>
+                                <div class="table">2</div>
+                                <div class="table">3</div>
+                                <div class="table">4</div>
+                                <div class="table">5</div>
+                                <div class="table">6</div>
+                            </div>
+
+                            <div class="entrance">ENTRANCE</div>
+                        </div>
+                    </div>
+
+                    <!-- TABLE GUEST LIST - Placed below the diagram for better mobile flow and clarity -->
+                    <div class="seating-list-full">
+                        <div class="table-list-grid">
+                            <div class="table-list">
+                                <h4>Table 1</h4>
+                                <ul>
+                                    <li>Pastor Toluope Adekanye</li>
+                                    <li>Paul Atitola</li>
+                                    <li>Idugbowa Yemi Eweka</li>
+                                    <li>Pastor Temidayo Ajiboye</li>
+                                    <li>Sis Seun</li>
+                                    <li>Bro Johnson</li>
+                                </ul>
+                            </div>
+
+                            <div class="table-list">
+                                <h4>Table 2</h4>
+                                <ul>
+                                    <li>Favor Bawa</li>
+                                    <li>Akinjide James</li>
+                                    <li>Ronaldine Mesidor</li>
+                                    <li>Lois Matthew</li>
+                                    <li>David Diya</li>
+                                    <li>Joy Adewumi</li>
+                                </ul>
+                            </div>
+
+                            <div class="table-list">
+                                <h4>Table 3</h4>
+                                <ul>
+                                    <li>Tade Atitola</li>
+                                    <li>Oluwaseun Adebisi</li>
+                                    <li>Oluwaseunlore Adebisi</li>
+                                    <li>Dami Olatunde</li>
+                                    <li>Blessing Omolere</li>
+                                </ul>
+                            </div>
+
+                            <div class="table-list">
+                                <h4>Table 4</h4>
+                                <ul>
+                                    <li>Haniel Nkadi</li>
+                                    <li>Awwal Oladipupo</li>
+                                    <li>Kenny Oduwaye</li>
+                                    <li>Busolami Sobola</li>
+                                    <li>Ibukun Bankole</li>
+                                    <li>Mayen Udofia</li>
+                                </ul>
+                            </div>
+
+                            <div class="table-list">
+                                <h4>Table 5</h4>
+                                <ul>
+                                    <li>Tomipe Adesogan</li>
+                                    <li>Sis Maria</li>
+                                    <li>Glory Olaitan</li>
+                                    <li>Greatness Olaitan</li>
+                                    <li>Favor Olasosebikan</li>
+                                    <li>David Adengua</li>
+                                </ul>
+                            </div>
+
+                            <div class="table-list">
+                                <h4>Table 6</h4>
+                                <ul>
+                                    <li>Toyin Olusanya</li>
+                                    <li>Niyi Ibituyi</li>
+                                    <li>Awele Gbemudu</li>
+                                    <li>Joan Chimezie</li>
+                                    <li>Oluwatola Femi-Olatunji</li>
+                                    <li>Samuel Akinusi</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
+
 </html>
